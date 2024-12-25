@@ -33,11 +33,8 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            panel1 = new Panel();
-            panelChart_MAB = new Panel();
             groupBoxChart_MAB = new GroupBox();
             chartStatistic_MAB = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            panelOperation_MAB = new Panel();
             groupBoxOperation_MAB = new GroupBox();
             buttonTask_MAB = new Button();
             buttonInfo_MAB = new Button();
@@ -57,7 +54,6 @@
             buttonSearchInfo_MAB = new Button();
             textBoxSearch_MAB = new TextBox();
             labelSearchInfo_MAB = new Label();
-            panelInputData_MAB = new Panel();
             groupBoxInPutData_MAB = new GroupBox();
             dataGridViewInPutData_MAB = new DataGridView();
             ColumnCountryIn_MAB = new DataGridViewTextBoxColumn();
@@ -66,7 +62,7 @@
             ColumnSquareIn_MAB = new DataGridViewTextBoxColumn();
             ColumnEconomy_MAB = new DataGridViewTextBoxColumn();
             ColumnPrPopulIn_MAB = new DataGridViewTextBoxColumn();
-            panelOutputData_MAB = new Panel();
+            panelChart_MAB = new Panel();
             groupBoxOutPutData_MAB = new GroupBox();
             dataGridViewOutPutData_MAB = new DataGridView();
             ColumnCountryOut_MAB = new DataGridViewTextBoxColumn();
@@ -78,34 +74,24 @@
             toolTipInfo_MAB = new ToolTip(components);
             openFileDialogLibrary_MAB = new OpenFileDialog();
             saveFileDialogLibrary_MAB = new SaveFileDialog();
-            panelChart_MAB.SuspendLayout();
+            panel_MAB = new Panel();
+            panel_InPutData_MAB = new Panel();
+            panelOutPutData_MAB = new Panel();
+            tableLayoutPanel_MAB = new TableLayoutPanel();
+            buttonGuide_MAB = new Button();
             groupBoxChart_MAB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chartStatistic_MAB).BeginInit();
-            panelOperation_MAB.SuspendLayout();
             groupBoxOperation_MAB.SuspendLayout();
-            panelInputData_MAB.SuspendLayout();
             groupBoxInPutData_MAB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewInPutData_MAB).BeginInit();
-            panelOutputData_MAB.SuspendLayout();
+            panelChart_MAB.SuspendLayout();
             groupBoxOutPutData_MAB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOutPutData_MAB).BeginInit();
+            panel_MAB.SuspendLayout();
+            panel_InPutData_MAB.SuspendLayout();
+            panelOutPutData_MAB.SuspendLayout();
+            tableLayoutPanel_MAB.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Location = new Point(528, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(375, 162);
-            panel1.TabIndex = 0;
-            // 
-            // panelChart_MAB
-            // 
-            panelChart_MAB.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelChart_MAB.Controls.Add(groupBoxChart_MAB);
-            panelChart_MAB.Location = new Point(528, 1);
-            panelChart_MAB.Name = "panelChart_MAB";
-            panelChart_MAB.Size = new Size(539, 287);
-            panelChart_MAB.TabIndex = 1;
             // 
             // groupBoxChart_MAB
             // 
@@ -113,39 +99,31 @@
             groupBoxChart_MAB.Dock = DockStyle.Fill;
             groupBoxChart_MAB.Location = new Point(0, 0);
             groupBoxChart_MAB.Name = "groupBoxChart_MAB";
-            groupBoxChart_MAB.Size = new Size(539, 287);
+            groupBoxChart_MAB.Size = new Size(553, 290);
             groupBoxChart_MAB.TabIndex = 0;
             groupBoxChart_MAB.TabStop = false;
             groupBoxChart_MAB.Text = "График";
             // 
             // chartStatistic_MAB
             // 
+            chartStatistic_MAB.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             chartArea1.Name = "ChartArea1";
             chartStatistic_MAB.ChartAreas.Add(chartArea1);
-            chartStatistic_MAB.Dock = DockStyle.Fill;
             legend1.Name = "Legend1";
             chartStatistic_MAB.Legends.Add(legend1);
-            chartStatistic_MAB.Location = new Point(3, 23);
+            chartStatistic_MAB.Location = new Point(3, 26);
             chartStatistic_MAB.Name = "chartStatistic_MAB";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             chartStatistic_MAB.Series.Add(series1);
-            chartStatistic_MAB.Size = new Size(533, 261);
+            chartStatistic_MAB.Size = new Size(547, 261);
             chartStatistic_MAB.TabIndex = 0;
             chartStatistic_MAB.Text = "chart1";
             // 
-            // panelOperation_MAB
-            // 
-            panelOperation_MAB.Controls.Add(groupBoxOperation_MAB);
-            panelOperation_MAB.Controls.Add(panel1);
-            panelOperation_MAB.Location = new Point(0, 1);
-            panelOperation_MAB.Name = "panelOperation_MAB";
-            panelOperation_MAB.Size = new Size(522, 287);
-            panelOperation_MAB.TabIndex = 2;
-            // 
             // groupBoxOperation_MAB
             // 
+            groupBoxOperation_MAB.Controls.Add(buttonGuide_MAB);
             groupBoxOperation_MAB.Controls.Add(buttonTask_MAB);
             groupBoxOperation_MAB.Controls.Add(buttonInfo_MAB);
             groupBoxOperation_MAB.Controls.Add(buttonSaveFile_MAB);
@@ -167,16 +145,17 @@
             groupBoxOperation_MAB.Dock = DockStyle.Fill;
             groupBoxOperation_MAB.Location = new Point(0, 0);
             groupBoxOperation_MAB.Name = "groupBoxOperation_MAB";
-            groupBoxOperation_MAB.Size = new Size(522, 287);
+            groupBoxOperation_MAB.Size = new Size(553, 290);
             groupBoxOperation_MAB.TabIndex = 1;
             groupBoxOperation_MAB.TabStop = false;
             groupBoxOperation_MAB.Text = "Операции";
+            groupBoxOperation_MAB.Enter += groupBoxOperation_MAB_Enter;
             // 
             // buttonTask_MAB
             // 
             buttonTask_MAB.FlatStyle = FlatStyle.Flat;
             buttonTask_MAB.Image = Properties.Resources.application_form_edit;
-            buttonTask_MAB.Location = new Point(432, 225);
+            buttonTask_MAB.Location = new Point(376, 232);
             buttonTask_MAB.Name = "buttonTask_MAB";
             buttonTask_MAB.Size = new Size(77, 52);
             buttonTask_MAB.TabIndex = 17;
@@ -188,7 +167,7 @@
             // 
             buttonInfo_MAB.FlatStyle = FlatStyle.Flat;
             buttonInfo_MAB.Image = Properties.Resources.application_form_magnify;
-            buttonInfo_MAB.Location = new Point(349, 225);
+            buttonInfo_MAB.Location = new Point(293, 232);
             buttonInfo_MAB.Name = "buttonInfo_MAB";
             buttonInfo_MAB.Size = new Size(77, 52);
             buttonInfo_MAB.TabIndex = 16;
@@ -200,7 +179,7 @@
             // 
             buttonSaveFile_MAB.FlatStyle = FlatStyle.Flat;
             buttonSaveFile_MAB.Image = Properties.Resources.book_key;
-            buttonSaveFile_MAB.Location = new Point(89, 225);
+            buttonSaveFile_MAB.Location = new Point(89, 232);
             buttonSaveFile_MAB.Name = "buttonSaveFile_MAB";
             buttonSaveFile_MAB.Size = new Size(77, 52);
             buttonSaveFile_MAB.TabIndex = 15;
@@ -212,7 +191,7 @@
             // 
             buttonOpenFile_MAB.FlatStyle = FlatStyle.Flat;
             buttonOpenFile_MAB.Image = Properties.Resources.book_open;
-            buttonOpenFile_MAB.Location = new Point(6, 225);
+            buttonOpenFile_MAB.Location = new Point(6, 232);
             buttonOpenFile_MAB.Name = "buttonOpenFile_MAB";
             buttonOpenFile_MAB.Size = new Size(77, 52);
             buttonOpenFile_MAB.TabIndex = 14;
@@ -261,7 +240,7 @@
             // labelNumOfColumn_MAB
             // 
             labelNumOfColumn_MAB.AutoSize = true;
-            labelNumOfColumn_MAB.Location = new Point(61, 113);
+            labelNumOfColumn_MAB.Location = new Point(70, 112);
             labelNumOfColumn_MAB.Name = "labelNumOfColumn_MAB";
             labelNumOfColumn_MAB.Size = new Size(120, 20);
             labelNumOfColumn_MAB.TabIndex = 9;
@@ -276,7 +255,7 @@
             // 
             // textBoxNumOfColumn_MAB
             // 
-            textBoxNumOfColumn_MAB.Location = new Point(61, 135);
+            textBoxNumOfColumn_MAB.Location = new Point(70, 135);
             textBoxNumOfColumn_MAB.Name = "textBoxNumOfColumn_MAB";
             textBoxNumOfColumn_MAB.Size = new Size(105, 27);
             textBoxNumOfColumn_MAB.TabIndex = 7;
@@ -346,35 +325,27 @@
             labelSearchInfo_MAB.TabIndex = 0;
             labelSearchInfo_MAB.Text = "Поиск:";
             // 
-            // panelInputData_MAB
-            // 
-            panelInputData_MAB.Controls.Add(groupBoxInPutData_MAB);
-            panelInputData_MAB.Location = new Point(0, 284);
-            panelInputData_MAB.Name = "panelInputData_MAB";
-            panelInputData_MAB.Size = new Size(522, 271);
-            panelInputData_MAB.TabIndex = 3;
-            // 
             // groupBoxInPutData_MAB
             // 
             groupBoxInPutData_MAB.Controls.Add(dataGridViewInPutData_MAB);
             groupBoxInPutData_MAB.Dock = DockStyle.Fill;
             groupBoxInPutData_MAB.Location = new Point(0, 0);
             groupBoxInPutData_MAB.Name = "groupBoxInPutData_MAB";
-            groupBoxInPutData_MAB.Size = new Size(522, 271);
+            groupBoxInPutData_MAB.Size = new Size(553, 359);
             groupBoxInPutData_MAB.TabIndex = 0;
             groupBoxInPutData_MAB.TabStop = false;
             groupBoxInPutData_MAB.Text = "Ввод данных";
             // 
             // dataGridViewInPutData_MAB
             // 
+            dataGridViewInPutData_MAB.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewInPutData_MAB.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewInPutData_MAB.Columns.AddRange(new DataGridViewColumn[] { ColumnCountryIn_MAB, ColumnStolIn_MAB, ColumnPopulIn_MAB, ColumnSquareIn_MAB, ColumnEconomy_MAB, ColumnPrPopulIn_MAB });
-            dataGridViewInPutData_MAB.Dock = DockStyle.Fill;
             dataGridViewInPutData_MAB.Location = new Point(3, 23);
             dataGridViewInPutData_MAB.Name = "dataGridViewInPutData_MAB";
             dataGridViewInPutData_MAB.RowHeadersVisible = false;
             dataGridViewInPutData_MAB.RowHeadersWidth = 51;
-            dataGridViewInPutData_MAB.Size = new Size(516, 245);
+            dataGridViewInPutData_MAB.Size = new Size(547, 333);
             dataGridViewInPutData_MAB.TabIndex = 0;
             // 
             // ColumnCountryIn_MAB
@@ -425,14 +396,14 @@
             ColumnPrPopulIn_MAB.Resizable = DataGridViewTriState.False;
             ColumnPrPopulIn_MAB.Width = 125;
             // 
-            // panelOutputData_MAB
+            // panelChart_MAB
             // 
-            panelOutputData_MAB.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelOutputData_MAB.Controls.Add(groupBoxOutPutData_MAB);
-            panelOutputData_MAB.Location = new Point(528, 284);
-            panelOutputData_MAB.Name = "panelOutputData_MAB";
-            panelOutputData_MAB.Size = new Size(539, 271);
-            panelOutputData_MAB.TabIndex = 4;
+            panelChart_MAB.Controls.Add(groupBoxChart_MAB);
+            panelChart_MAB.Dock = DockStyle.Fill;
+            panelChart_MAB.Location = new Point(562, 3);
+            panelChart_MAB.Name = "panelChart_MAB";
+            panelChart_MAB.Size = new Size(553, 290);
+            panelChart_MAB.TabIndex = 4;
             // 
             // groupBoxOutPutData_MAB
             // 
@@ -440,21 +411,21 @@
             groupBoxOutPutData_MAB.Dock = DockStyle.Fill;
             groupBoxOutPutData_MAB.Location = new Point(0, 0);
             groupBoxOutPutData_MAB.Name = "groupBoxOutPutData_MAB";
-            groupBoxOutPutData_MAB.Size = new Size(539, 271);
+            groupBoxOutPutData_MAB.Size = new Size(553, 359);
             groupBoxOutPutData_MAB.TabIndex = 0;
             groupBoxOutPutData_MAB.TabStop = false;
             groupBoxOutPutData_MAB.Text = "Вывод данных";
             // 
             // dataGridViewOutPutData_MAB
             // 
+            dataGridViewOutPutData_MAB.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewOutPutData_MAB.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewOutPutData_MAB.Columns.AddRange(new DataGridViewColumn[] { ColumnCountryOut_MAB, ColumnStolOut_MAB, ColumnPopulationOut_MAB, ColumnSquareOut_MAB, ColumnEconomyOut_MAB, ColumnPrOut_MAB });
-            dataGridViewOutPutData_MAB.Dock = DockStyle.Fill;
             dataGridViewOutPutData_MAB.Location = new Point(3, 23);
             dataGridViewOutPutData_MAB.Name = "dataGridViewOutPutData_MAB";
             dataGridViewOutPutData_MAB.RowHeadersVisible = false;
             dataGridViewOutPutData_MAB.RowHeadersWidth = 51;
-            dataGridViewOutPutData_MAB.Size = new Size(533, 245);
+            dataGridViewOutPutData_MAB.Size = new Size(547, 333);
             dataGridViewOutPutData_MAB.TabIndex = 0;
             // 
             // ColumnCountryOut_MAB
@@ -507,44 +478,93 @@
             // 
             openFileDialogLibrary_MAB.FileName = "openFileDialog";
             // 
+            // panel_MAB
+            // 
+            panel_MAB.Controls.Add(groupBoxOperation_MAB);
+            panel_MAB.Dock = DockStyle.Fill;
+            panel_MAB.Location = new Point(3, 3);
+            panel_MAB.Name = "panel_MAB";
+            panel_MAB.Size = new Size(553, 290);
+            panel_MAB.TabIndex = 5;
+            // 
+            // panel_InPutData_MAB
+            // 
+            panel_InPutData_MAB.Controls.Add(groupBoxInPutData_MAB);
+            panel_InPutData_MAB.Dock = DockStyle.Fill;
+            panel_InPutData_MAB.Location = new Point(3, 299);
+            panel_InPutData_MAB.Name = "panel_InPutData_MAB";
+            panel_InPutData_MAB.Size = new Size(553, 359);
+            panel_InPutData_MAB.TabIndex = 6;
+            // 
+            // panelOutPutData_MAB
+            // 
+            panelOutPutData_MAB.Controls.Add(groupBoxOutPutData_MAB);
+            panelOutPutData_MAB.Dock = DockStyle.Fill;
+            panelOutPutData_MAB.Location = new Point(562, 299);
+            panelOutPutData_MAB.Name = "panelOutPutData_MAB";
+            panelOutPutData_MAB.Size = new Size(553, 359);
+            panelOutPutData_MAB.TabIndex = 7;
+            // 
+            // tableLayoutPanel_MAB
+            // 
+            tableLayoutPanel_MAB.ColumnCount = 2;
+            tableLayoutPanel_MAB.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel_MAB.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel_MAB.Controls.Add(panel_InPutData_MAB, 0, 1);
+            tableLayoutPanel_MAB.Controls.Add(panel_MAB, 0, 0);
+            tableLayoutPanel_MAB.Controls.Add(panelChart_MAB, 1, 0);
+            tableLayoutPanel_MAB.Controls.Add(panelOutPutData_MAB, 1, 1);
+            tableLayoutPanel_MAB.Dock = DockStyle.Fill;
+            tableLayoutPanel_MAB.Location = new Point(0, 0);
+            tableLayoutPanel_MAB.Name = "tableLayoutPanel_MAB";
+            tableLayoutPanel_MAB.RowCount = 2;
+            tableLayoutPanel_MAB.RowStyles.Add(new RowStyle(SizeType.Percent, 44.926712F));
+            tableLayoutPanel_MAB.RowStyles.Add(new RowStyle(SizeType.Percent, 55.0732841F));
+            tableLayoutPanel_MAB.Size = new Size(1118, 661);
+            tableLayoutPanel_MAB.TabIndex = 18;
+            // 
+            // buttonGuide_MAB
+            // 
+            buttonGuide_MAB.FlatStyle = FlatStyle.Flat;
+            buttonGuide_MAB.Image = Properties.Resources.application_form;
+            buttonGuide_MAB.Location = new Point(459, 232);
+            buttonGuide_MAB.Name = "buttonGuide_MAB";
+            buttonGuide_MAB.Size = new Size(77, 52);
+            buttonGuide_MAB.TabIndex = 18;
+            toolTipInfo_MAB.SetToolTip(buttonGuide_MAB, "Руководство по работе с приложением");
+            buttonGuide_MAB.UseVisualStyleBackColor = true;
+            buttonGuide_MAB.Click += buttonGuide_MAB_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1068, 554);
-            Controls.Add(panelOutputData_MAB);
-            Controls.Add(panelInputData_MAB);
-            Controls.Add(panelOperation_MAB);
-            Controls.Add(panelChart_MAB);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
+            ClientSize = new Size(1118, 661);
+            Controls.Add(tableLayoutPanel_MAB);
             MinimumSize = new Size(1090, 605);
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "География";
-            panelChart_MAB.ResumeLayout(false);
             groupBoxChart_MAB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)chartStatistic_MAB).EndInit();
-            panelOperation_MAB.ResumeLayout(false);
             groupBoxOperation_MAB.ResumeLayout(false);
             groupBoxOperation_MAB.PerformLayout();
-            panelInputData_MAB.ResumeLayout(false);
             groupBoxInPutData_MAB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewInPutData_MAB).EndInit();
-            panelOutputData_MAB.ResumeLayout(false);
+            panelChart_MAB.ResumeLayout(false);
             groupBoxOutPutData_MAB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewOutPutData_MAB).EndInit();
+            panel_MAB.ResumeLayout(false);
+            panel_InPutData_MAB.ResumeLayout(false);
+            panelOutPutData_MAB.ResumeLayout(false);
+            tableLayoutPanel_MAB.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel1;
-        private Panel panelChart_MAB;
-        private Panel panelOperation_MAB;
         private Panel panelInputData_MAB;
-        private Panel panelOutputData_MAB;
+        private Panel panelChart_MAB;
         private GroupBox groupBoxChart_MAB;
-        private GroupBox groupBoxOperation_MAB;
         private GroupBox groupBoxInPutData_MAB;
         private GroupBox groupBoxOutPutData_MAB;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartStatistic_MAB;
@@ -562,26 +582,32 @@
         private DataGridViewTextBoxColumn ColumnSquareOut_MAB;
         private DataGridViewTextBoxColumn ColumnEconomyOut_MAB;
         private DataGridViewTextBoxColumn ColumnPrOut_MAB;
-        private Button buttonSearchInfo_MAB;
-        private TextBox textBoxSearch_MAB;
-        private Label labelSearchInfo_MAB;
-        private Label labelSort_MAB;
         private ToolTip toolTipInfo_MAB;
-        private Button buttonSortPopulation_MAB;
-        private Button buttonSortSquare_MAB;
+        private OpenFileDialog openFileDialogLibrary_MAB;
+        private SaveFileDialog saveFileDialogLibrary_MAB;
+        private GroupBox groupBoxOperation_MAB;
+        private Button buttonTask_MAB;
+        private Button buttonInfo_MAB;
+        private Button buttonSaveFile_MAB;
+        private Button buttonOpenFile_MAB;
+        private Button buttonStatistic_MAB;
+        private TextBox textBoxResStatistic_MAB;
+        private Label labelResStatistic_MAB;
         private Label labelOperation_MAB;
         private Label labelNumOfColumn_MAB;
         private TextBox textBoxOperation_MAB;
         private TextBox textBoxNumOfColumn_MAB;
         private Label labelStatistic_MAB;
-        private TextBox textBoxResStatistic_MAB;
-        private Label labelResStatistic_MAB;
-        private Button buttonStatistic_MAB;
-        private Button buttonTask_MAB;
-        private Button buttonInfo_MAB;
-        private Button buttonSaveFile_MAB;
-        private Button buttonOpenFile_MAB;
-        private OpenFileDialog openFileDialogLibrary_MAB;
-        private SaveFileDialog saveFileDialogLibrary_MAB;
+        private Button buttonSortPopulation_MAB;
+        private Button buttonSortSquare_MAB;
+        private Label labelSort_MAB;
+        private Button buttonSearchInfo_MAB;
+        private TextBox textBoxSearch_MAB;
+        private Label labelSearchInfo_MAB;
+        private Panel panel_MAB;
+        private Panel panel_InPutData_MAB;
+        private Panel panelOutPutData_MAB;
+        private TableLayoutPanel tableLayoutPanel_MAB;
+        private Button buttonGuide_MAB;
     }
 }
